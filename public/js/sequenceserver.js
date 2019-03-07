@@ -170,37 +170,37 @@ if (!SS) {
     };
 
     SS.updateDownloadFastaOfAllLink = function () {
-        var num_hits = $('.hitn').length;
-
-        var $a = $('.download-fasta-of-all');
-        if (num_hits >= 1 && num_hits <= 30) {
-            var sequence_ids = $('.hitn :checkbox').map(function() {
-                return this.value;
-            }).get();
-            $a
-            .enable()
-            .attr('href', SS.generateURI(sequence_ids, $a.data().databases))
-            .tooltip({
-                title: num_hits + " hit(s)."
-            });
-            return;
-        }
-
-        if (num_hits === 0) {
-            $a.tooltip({
-                title: "No hit to download."
-            });
-        }
-
-        if (num_hits > 30) {
-            $a.tooltip({
-                title: "Can't download more than 30 hits."
-            });
-        }
-
-        $a
-        .disable()
-        .removeAttr('href');
+        // var num_hits = $('.hitn').length;
+        //
+        // var $a = $('.download-fasta-of-all');
+        // if (num_hits >= 1 && num_hits <= 30) {
+        //     var sequence_ids = $('.hitn :checkbox').map(function() {
+        //         return this.value;
+        //     }).get();
+        //     $a
+        //     .enable()
+        //     .attr('href', SS.generateURI(sequence_ids, $a.data().databases))
+        //     .tooltip({
+        //         title: num_hits + " hit(s)."
+        //     });
+        //     return;
+        // }
+        //
+        // if (num_hits === 0) {
+        //     $a.tooltip({
+        //         title: "No hit to download."
+        //     });
+        // }
+        //
+        // if (num_hits > 30) {
+        //     $a.tooltip({
+        //         title: "Can't download more than 30 hits."
+        //     });
+        // }
+        //
+        // $a
+        // .disable()
+        // .removeAttr('href');
     };
 
     /* Update the FASTA downloader button's state appropriately.
@@ -209,60 +209,60 @@ if (!SS) {
      * When no hits are obtained, the link is not present at all.
      */
     SS.updateDownloadFastaOfSelectedLink = function () {
-        var num_checked  = $('.hitn :checkbox:checked').length;
-
-        var $a = $('.download-fasta-of-selected');
-        var $n = $a.find('span');
-
-        if (num_checked >= 1 && num_checked <= 30) {
-            var sequence_ids = $('.hitn :checkbox:checked').map(function () {
-                return this.value;
-            }).get();
-
-            $a
-            .enable()
-            .attr('href', SS.generateURI(sequence_ids, $a.data().databases))
-            .tooltip({
-                title: num_checked + " hit(s) selected."
-            })
-            .find('span').html(num_checked);
-            return;
-        }
-
-        if (num_checked === 0) {
-            $n.empty();
-            $a.tooltip({
-                title: "No hit selected."
-            });
-        }
-
-        if (num_checked > 30) {
-            $a.tooltip({
-                title: "Can't download more than 30 hits."
-            });
-        }
-
-        $a
-        .disable()
-        .removeAttr('href');
+        // var num_checked  = $('.hitn :checkbox:checked').length;
+        //
+        // var $a = $('.download-fasta-of-selected');
+        // var $n = $a.find('span');
+        //
+        // if (num_checked >= 1 && num_checked <= 30) {
+        //     var sequence_ids = $('.hitn :checkbox:checked').map(function () {
+        //         return this.value;
+        //     }).get();
+        //
+        //     $a
+        //     .enable()
+        //     .attr('href', SS.generateURI(sequence_ids, $a.data().databases))
+        //     .tooltip({
+        //         title: num_checked + " hit(s) selected."
+        //     })
+        //     .find('span').html(num_checked);
+        //     return;
+        // }
+        //
+        // if (num_checked === 0) {
+        //     $n.empty();
+        //     $a.tooltip({
+        //         title: "No hit selected."
+        //     });
+        // }
+        //
+        // if (num_checked > 30) {
+        //     $a.tooltip({
+        //         title: "Can't download more than 30 hits."
+        //     });
+        // }
+        //
+        // $a
+        // .disable()
+        // .removeAttr('href');
     };
 
     SS.updateSequenceViewerLinks = function () {
-        var MAX_LENGTH = 10000;
-
-        $('.view-sequence').each(function () {
-            var $this = $(this);
-            var $hitn = $this.closest('.hitn');
-            if ($hitn.data().hitLen > MAX_LENGTH) {
-                $this
-                .disable()
-                .removeAttr('href')
-                .tooltip({
-                    title: 'Sequence too long to show. Please view it ' +
-                           'locally after download.'
-                });
-            }
-        });
+        // var MAX_LENGTH = 10000;
+        //
+        // $('.view-sequence').each(function () {
+        //     var $this = $(this);
+        //     var $hitn = $this.closest('.hitn');
+        //     if ($hitn.data().hitLen > MAX_LENGTH) {
+        //         $this
+        //         .disable()
+        //         .removeAttr('href')
+        //         .tooltip({
+        //             title: 'Sequence too long to show. Please view it ' +
+        //                    'locally after download.'
+        //         });
+        //     }
+        // });
     };
 
     SS.setupTooltips = function () {
@@ -278,32 +278,32 @@ if (!SS) {
     };
 
     SS.setupDownloadLinks = function () {
-        $('.download').on('click', function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            if (event.target.disabled) return;
-
-            var url = this.href;
-            $.get(url)
-            .done(function (data) {
-                window.location.href = url;
-            })
-            .fail(function (jqXHR, status, error) {
-                SS.showErrorModal(jqXHR, function () {});
-            });
-        });
+        // $('.download').on('click', function (event) {
+        //     event.preventDefault();
+        //     event.stopPropagation();
+        //
+        //     if (event.target.disabled) return;
+        //
+        //     var url = this.href;
+        //     $.get(url)
+        //     .done(function (data) {
+        //         window.location.href = url;
+        //     })
+        //     .fail(function (jqXHR, status, error) {
+        //         SS.showErrorModal(jqXHR, function () {});
+        //     });
+        // });
     };
 
     SS.generateURI = function (sequence_ids, database_ids) {
-        // Encode URIs against strange characters in sequence ids.
-        sequence_ids = encodeURIComponent(sequence_ids.join(' '));
-        database_ids = encodeURIComponent(database_ids);
-
-        var url = "get_sequence/?sequence_ids=" + sequence_ids +
-            "&database_ids=" + database_ids + '&download=fasta';
-
-        return url;
+        // // Encode URIs against strange characters in sequence ids.
+        // sequence_ids = encodeURIComponent(sequence_ids.join(' '));
+        // database_ids = encodeURIComponent(database_ids);
+        //
+        // var url = "get_sequence/?sequence_ids=" + sequence_ids +
+        //     "&database_ids=" + database_ids + '&download=fasta';
+        //
+        // return url;
     };
 
     SS.showErrorModal = function (jqXHR, beforeShow) {
@@ -807,5 +807,13 @@ $(document).ready(function(){
         return false;
     });
 
+    $('#sequence').keyup(function() {
+        var query = $(this).val();
+        if (query != null && query.length > 20) {
+            query = query.substring(0,20);
+            $(this).val(query);
+        }
+    });
+    
     SS.$sequence.poll();
 });

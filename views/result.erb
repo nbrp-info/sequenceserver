@@ -90,6 +90,7 @@
                       class="col-md-4">
                       Hit length: <%= hit.length %>
                     </div>
+<% if false %><%# %記号によるコメントアウトでは文法エラーとなるため、if falseで無効化 %>
                     <div
                       class="hit-links text-right col-md-8">
                       <label>
@@ -101,6 +102,7 @@
                         | <%= a link %>
                       <% end %>
                     </div>
+<% end %>
                   </div>
                   <table
                     class="table hsps">
@@ -196,6 +198,7 @@ Total letters in queried databases: <%= report.stats[:ncharacters] %>
         <br>
         <br>
 
+<% if false %><%# %記号によるコメントアウトでは文法エラーとなるため、if falseで無効化 %>
         <div
           class="page-header">
           <h4>
@@ -250,6 +253,7 @@ Total letters in queried databases: <%= report.stats[:ncharacters] %>
             </a>
           </li>
         </ul>
+<% end %>
       </div>
     </div>
   <% end %>
