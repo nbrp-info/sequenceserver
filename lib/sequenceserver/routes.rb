@@ -145,19 +145,19 @@ target="#{target}">)
     # Use whitespace to separate entries in sequence_ids (all other chars exist
     # in identifiers) and retreival_databases (we don't allow whitespace in a
     # database's name, so it's safe).
-    get '/get_sequence/' do
-      sequence_ids = params[:sequence_ids].split(/\s/)
-      database_ids = params[:database_ids].split(/\s/)
-
-      sequences = Sequence::Retriever.new(sequence_ids, database_ids,
-                                          params[:download])
-
-      send_file(sequences.file.path,
-                :type     => sequences.mime,
-                :filename => sequences.filename) if params[:download]
-
-      sequences.to_json
-    end
+    # get '/get_sequence/' do
+    #   sequence_ids = params[:sequence_ids].split(/\s/)
+    #   database_ids = params[:database_ids].split(/\s/)
+    #
+    #   sequences = Sequence::Retriever.new(sequence_ids, database_ids,
+    #                                       params[:download])
+    #
+    #   send_file(sequences.file.path,
+    #             :type     => sequences.mime,
+    #             :filename => sequences.filename) if params[:download]
+    #
+    #   sequences.to_json
+    # end
 
     # Download BLAST report in various formats.
     get '/download/:search_id.:type' do
