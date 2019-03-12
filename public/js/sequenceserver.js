@@ -809,8 +809,8 @@ $(document).ready(function(){
 
     $('#sequence').keyup(function() {
         var query = $(this).val();
-        if (query != null && query.length > 20) {
-            query = query.substring(0,20);
+        if (query != null && query.length > 2000) {
+            query = query.substring(0,2000);
             $(this).val(query);
         }
     });
