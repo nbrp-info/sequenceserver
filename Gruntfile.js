@@ -81,6 +81,8 @@ module.exports = function (grunt) {
                             'public/js/sequenceserver.js',
                             'public/js/jquery.t.js',
                             'public/js/sequenceserver.blast.js',
+
+                            'public/js/search.js',
                         ]
                 }
             }

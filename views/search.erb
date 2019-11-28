@@ -126,6 +126,19 @@
       </div>
     </noscript>
 
+    <div class="panel panel-default">
+      <div>
+        <span>This blast server provide chance to search for homologous sequences against the genome assemblies,
+          which are de novo assembled by DenovoMagic, publically available under the Tronto Agreement at:
+        <a href="https://wheat.ipk-gatersleben.de" target="_blank">https://wheat.ipk-gatersleben.de</a>, and the scaffolded assemblies by
+        Earlham Institute, UK that are deposited at:
+          <a href="https://opendata.earlham.ac.uk/wheat/under_license/toronto/Clavijo_2017-04-25_Wheat-LoLa/." target="_blank">
+            https://opendata.earlham.ac.uk/wheat/under_license/toronto/Clavijo_2017-04-25_Wheat-LoLa/.
+          </a>
+        </span>
+      </div>
+    </div>
+
     <form
       class="form-horizontal" id="blast"
       method="post" action="#result">
@@ -202,6 +215,9 @@
                 class="panel-heading">
                 <h4><%= type.capitalize %> databases</h4>
               </div>
+              <div class="btn btn-default all-button" style="margin-top: 10px;">
+                <span>All</span>
+              </div>
               <ul
                 class="list-group databases <%= type %>">
                 <% databases[type].sort_by(&:title).each do |database| %>
@@ -209,7 +225,7 @@
                     <div
                       class="checkbox">
                       <label>
-                        <input type="checkbox" name="databases[]" value="<%=database.id%>" data-type="<%=database.type%>" />
+                        <input type="checkbox" name="databases[]" value="<%=database.id%>" data-type="<%=database.type%>" class="db_checkbox" />
                         <%= database.title or database.name %>
                       </label>
                     </div>
@@ -454,7 +470,6 @@
     <script type="text/javascript" src="js/jquery.t.js"></script>
     <script type="text/javascript" src="js/sequence.js"></script>
   <% end %>
-
   <!-- twitter -->
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </body>
