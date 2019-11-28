@@ -393,7 +393,7 @@ svg:not(:root) {
 .alignment {
   margin-top: 8px;
   white-space: pre;
-  font-family: monospace;
+  font-family: Menlo, monospace;
   line-height: 12px;
   letter-spacing: 1px;
 }
@@ -460,7 +460,7 @@ svg:not(:root) {
 
 .report-statistics {
   white-space: pre;
-  font-family: monospace;
+  font-family: Menlo, monospace;
 }
 
 .spinner {
