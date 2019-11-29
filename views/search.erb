@@ -215,9 +215,11 @@
                 class="panel-heading">
                 <h4><%= type.capitalize %> databases</h4>
               </div>
+              <%#
               <div class="btn btn-default all-button" style="margin-top: 10px;">
                 <span>All</span>
               </div>
+              %>
               <ul
                 class="list-group databases <%= type %>">
                 <% databases[type].sort_by(&:title).each do |database| %>
